@@ -1,42 +1,146 @@
-<html><head><meta charset='UTF-8'><style>body { font-family: sans-serif; max-width: 700px; margin: auto; padding: 2em; }</style></head><body>
-    <nav>
-        <select onchange="changeLang(this.value)">
-            <option value="en">English</option>
-            <option value="fr">Français</option>
-            <option value="so">Somali</option>
-            <option value="ar">العربية</option>
-        </select>
-    </nav>
-    <div class='lang-block' data-lang='en' style='display:block' ><h1>Terms of Service</h1><p>1. Use of Service: For legal purposes only. <br>
-2. User Data: Stored locally. <br>
-3. Intellectual Property: All rights reserved. <br>
-4. No Warranty: Use at your own risk. <br>
-5. Limitation of Liability: Not liable for damages. <br>
-6. Changes: Terms may update. <br>
-7. Contact: newleaftracker@gmail.com</p></div><div class='lang-block' data-lang='fr' style='display:none' ><h1>Conditions d'utilisation</h1><p>1. Utilisation : À des fins légales uniquement. <br>
-2. Données utilisateur : Stockées localement. <br>
-3. Propriété intellectuelle : Tous droits réservés. <br>
-4. Aucune garantie : Utilisation à vos risques. <br>
-5. Limitation de responsabilité : Pas responsable des dommages. <br>
-6. Changements : Conditions modifiables. <br>
-7. Contact : newleaftracker@gmail.com</p></div><div class='lang-block' data-lang='so' style='display:none' ><h1>Shuruudaha Adeegga</h1><p>1. Adeegga: Kaliya u isticmaal si sharci ah. <br>
-2. Xogta Isticmaalaha: Loo kaydiyaa gudaha. <br>
-3. Hantida Maskaxda: Xuquuqdu way xifdisan tahay. <br>
-4. Damaanad La'aan: Isticmaalka adiga ayaa leh masuuliyadda. <br>
-5. Masuuliyadda Xaddidan: Mas'uul kama nihin waxyeello kasta. <br>
-6. Isbeddelada: Shuruudaha way is beddeli karaan. <br>
-7. La Xiriir: newleaftracker@gmail.com</p></div><div class='lang-block' data-lang='ar' style='display:none' dir='rtl'><h1>شروط الخدمة</h1><p>1. استخدام الخدمة: للأغراض القانونية فقط. <br>
-2. بيانات المستخدم: محفوظة محليًا. <br>
-3. الملكية الفكرية: جميع الحقوق محفوظة. <br>
-4. لا ضمانات: الاستخدام على مسؤوليتك الخاصة. <br>
-5. تحديد المسؤولية: غير مسؤولين عن الأضرار. <br>
-6. التغييرات: قد تتغير الشروط. <br>
-7. التواصل: newleaftracker@gmail.com</p></div>
-    <script>
-    function changeLang(lang) {
-        document.querySelectorAll(".lang-block").forEach(el => el.style.display = "none");
-        document.querySelector(`.lang-block[data-lang="${lang}"]`).style.display = "block";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms of Service – NewLeaf Tracker</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      direction: ltr;
     }
-    window.onload = () => changeLang("en");
-    </script>
-    </body></html>
+    h1, h2 {
+      color: #2c3e50;
+    }
+    select {
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    .rtl {
+      direction: rtl;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title">Terms of Service</h1>
+
+  <label for="langSelect">🌐 Language:</label>
+  <select id="langSelect">
+    <option value="en">English</option>
+    <option value="fr">Français</option>
+    <option value="so">Soomaali</option>
+    <option value="ar">العربية</option>
+  </select>
+
+  <div id="content"></div>
+
+  <script>
+    const terms = {
+      en: {
+        title: "Terms of Service",
+        body: `
+<h2>Effective Date: July 20, 2025</h2>
+<p>Welcome to NewLeaf Tracker. By using our Chrome Extension, you agree to the following terms:</p>
+<h3>1. Use of Service</h3>
+<p>NewLeaf Tracker helps users track their immigration progress in Canada. Use it lawfully and respectfully.</p>
+<h3>2. User Data</h3>
+<p>We do not collect personal data. Your checklist is stored locally and synced via your Chrome account.</p>
+<h3>3. Intellectual Property</h3>
+<p>All content belongs to NewLeaf Tracker. Do not copy or distribute without permission.</p>
+<h3>4. No Warranty</h3>
+<p>This extension is provided “as is” without any warranty.</p>
+<h3>5. Limitation of Liability</h3>
+<p>We are not liable for any damages from the use or inability to use the extension.</p>
+<h3>6. Changes</h3>
+<p>Terms may be updated. Continued use means you accept the changes.</p>
+<h3>7. Contact</h3>
+<p>Email us at newleaftracker@gmail.com</p>
+        `
+      },
+      fr: {
+        title: "Conditions d'utilisation",
+        body: `
+<h2>Date d'effet : 20 juillet 2025</h2>
+<p>Bienvenue sur NewLeaf Tracker. En utilisant notre extension Chrome, vous acceptez les conditions suivantes :</p>
+<h3>1. Utilisation du service</h3>
+<p>NewLeaf Tracker aide les utilisateurs à suivre leurs progrès en matière d'immigration au Canada. Utilisez-le légalement et avec respect.</p>
+<h3>2. Données utilisateur</h3>
+<p>Nous ne collectons pas de données personnelles. Vos données sont enregistrées localement et synchronisées via Chrome.</p>
+<h3>3. Propriété intellectuelle</h3>
+<p>Tout le contenu appartient à NewLeaf Tracker. Ne copiez ni ne redistribuez sans autorisation.</p>
+<h3>4. Aucune garantie</h3>
+<p>L’extension est fournie “telle quelle” sans aucune garantie.</p>
+<h3>5. Limitation de responsabilité</h3>
+<p>Nous ne sommes pas responsables des dommages résultant de l'utilisation de l'extension.</p>
+<h3>6. Modifications</h3>
+<p>Les conditions peuvent être mises à jour. En continuant à utiliser l’extension, vous acceptez les modifications.</p>
+<h3>7. Contact</h3>
+<p>Contactez-nous à newleaftracker@gmail.com</p>
+        `
+      },
+      so: {
+        title: "Shuruudaha Adeegga",
+        body: `
+<h2>Taariikhda Dhaqan-galka: Luulyo 20, 2025</h2>
+<p>Kusoo dhowow NewLeaf Tracker. Isticmaalka kordhinta Chrome waxa uu la micno yahay inaad ogoshahay shuruudahaan:</p>
+<h3>1. Isticmaalka Adeegga</h3>
+<p>NewLeaf Tracker wuxuu kaa caawinayaa inaad la socoto horumarka socdaalkaaga ee Kanada. Si sharci ah u isticmaal.</p>
+<h3>2. Xogta Isticmaalaha</h3>
+<p>Ma ururinno xog shaqsi ah. Waxaad xogtaada ku kaydinaysaa browser-kaaga.</p>
+<h3>3. Hantida Maskaxda</h3>
+<p>Dhammaan waxa ku jira waxaa iska leh NewLeaf Tracker. Looma oggola in la koobiyeeyo ama la faafiyo oggolaansho la’aan.</p>
+<h3>4. Dammaanad La'aan</h3>
+<p>Kordhintan waxaa lagu bixiyaa “sida ay tahay” oo aan wax dammaanad ah lahayn.</p>
+<h3>5. Xadidaadda Mas’uuliyadda</h3>
+<p>Mas’uul kama nihin waxyeellada ka timaada isticmaalka kordhintan.</p>
+<h3>6. Isbeddelada</h3>
+<p>Shuruudaha way isbeddeli karaan. Haddii aad sii wadato isticmaalka, waxaad oggolaatay isbeddelka.</p>
+<h3>7. La Xiriir</h3>
+<p>Nala soo xiriir: newleaftracker@gmail.com</p>
+        `
+      },
+      ar: {
+        title: "شروط الخدمة",
+        body: `
+<h2>تاريخ السريان: 20 يوليو 2025</h2>
+<p>مرحبًا بك في NewLeaf Tracker. باستخدامك لإضافتنا، فإنك توافق على الشروط التالية:</p>
+<h3>1. استخدام الخدمة</h3>
+<p>NewLeaf Tracker يساعد المستخدمين في تتبع تقدمهم في الهجرة إلى كندا. استخدمه بشكل قانوني ومحترم.</p>
+<h3>2. بيانات المستخدم</h3>
+<p>نحن لا نجمع بيانات شخصية. يتم تخزين بياناتك محليًا ومزامنتها عبر حسابك في Chrome.</p>
+<h3>3. الملكية الفكرية</h3>
+<p>جميع المحتويات ملك لـ NewLeaf Tracker. لا يُسمح بالنسخ أو التوزيع بدون إذن.</p>
+<h3>4. عدم وجود ضمان</h3>
+<p>يتم توفير هذه الإضافة "كما هي" بدون أي ضمان.</p>
+<h3>5. تحديد المسؤولية</h3>
+<p>لسنا مسؤولين عن أي أضرار ناتجة عن استخدام الإضافة أو عدم القدرة على استخدامها.</p>
+<h3>6. التغييرات</h3>
+<p>قد يتم تحديث الشروط. استمرارك في الاستخدام يعني قبولك للتعديلات.</p>
+<h3>7. الاتصال</h3>
+<p>راسلنا على: newleaftracker@gmail.com</p>
+        `
+      }
+    };
+
+    const select = document.getElementById("langSelect");
+    const content = document.getElementById("content");
+    const title = document.getElementById("title");
+
+    function updateLang(lang) {
+      const isRTL = lang === "ar";
+      document.body.className = isRTL ? "rtl" : "";
+      document.documentElement.lang = lang;
+      title.textContent = terms[lang].title;
+      content.innerHTML = terms[lang].body;
+    }
+
+    select.addEventListener("change", () => updateLang(select.value));
+    updateLang("en");
+  </script>
+</body>
+</html>
