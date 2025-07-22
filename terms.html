@@ -1,0 +1,42 @@
+<html><head><meta charset='UTF-8'><style>body { font-family: sans-serif; max-width: 700px; margin: auto; padding: 2em; }</style></head><body>
+    <nav>
+        <select onchange="changeLang(this.value)">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="so">Somali</option>
+            <option value="ar">العربية</option>
+        </select>
+    </nav>
+    <div class='lang-block' data-lang='en' style='display:block' ><h1>Terms of Service</h1><p>1. Use of Service: For legal purposes only. <br>
+2. User Data: Stored locally. <br>
+3. Intellectual Property: All rights reserved. <br>
+4. No Warranty: Use at your own risk. <br>
+5. Limitation of Liability: Not liable for damages. <br>
+6. Changes: Terms may update. <br>
+7. Contact: newleaftracker@gmail.com</p></div><div class='lang-block' data-lang='fr' style='display:none' ><h1>Conditions d'utilisation</h1><p>1. Utilisation : À des fins légales uniquement. <br>
+2. Données utilisateur : Stockées localement. <br>
+3. Propriété intellectuelle : Tous droits réservés. <br>
+4. Aucune garantie : Utilisation à vos risques. <br>
+5. Limitation de responsabilité : Pas responsable des dommages. <br>
+6. Changements : Conditions modifiables. <br>
+7. Contact : newleaftracker@gmail.com</p></div><div class='lang-block' data-lang='so' style='display:none' ><h1>Shuruudaha Adeegga</h1><p>1. Adeegga: Kaliya u isticmaal si sharci ah. <br>
+2. Xogta Isticmaalaha: Loo kaydiyaa gudaha. <br>
+3. Hantida Maskaxda: Xuquuqdu way xifdisan tahay. <br>
+4. Damaanad La'aan: Isticmaalka adiga ayaa leh masuuliyadda. <br>
+5. Masuuliyadda Xaddidan: Mas'uul kama nihin waxyeello kasta. <br>
+6. Isbeddelada: Shuruudaha way is beddeli karaan. <br>
+7. La Xiriir: newleaftracker@gmail.com</p></div><div class='lang-block' data-lang='ar' style='display:none' dir='rtl'><h1>شروط الخدمة</h1><p>1. استخدام الخدمة: للأغراض القانونية فقط. <br>
+2. بيانات المستخدم: محفوظة محليًا. <br>
+3. الملكية الفكرية: جميع الحقوق محفوظة. <br>
+4. لا ضمانات: الاستخدام على مسؤوليتك الخاصة. <br>
+5. تحديد المسؤولية: غير مسؤولين عن الأضرار. <br>
+6. التغييرات: قد تتغير الشروط. <br>
+7. التواصل: newleaftracker@gmail.com</p></div>
+    <script>
+    function changeLang(lang) {
+        document.querySelectorAll(".lang-block").forEach(el => el.style.display = "none");
+        document.querySelector(`.lang-block[data-lang="${lang}"]`).style.display = "block";
+    }
+    window.onload = () => changeLang("en");
+    </script>
+    </body></html>

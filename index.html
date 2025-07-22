@@ -1,26 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - NewLeaf Tracker</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 40px; max-width: 800px; margin: auto; }
-        h1 { color: #2c3e50; }
-        p { line-height: 1.6; }
-    </style>
-</head>
-<body>
-    <h1>Privacy Policy for NewLeaf Tracker</h1>
-    <p>NewLeaf Tracker is a Chrome Extension designed to help newcomers to Canada track their immigration journey. Your privacy is important to us.</p>
-    <h2>Information We Collect</h2>
-    <p>We do not collect any personally identifiable information. All data stays within your browser and is not transmitted to any server.</p>
-    <h2>Permissions</h2>
-    <p>NewLeaf Tracker may require permission to store data locally using Chrome's storage API. This is solely to save your progress and checklist items.</p>
-    <h2>Data Security</h2>
-    <p>All data is stored locally in your browser and is not accessible to any external source. No data is sent to the developers or third parties.</p>
-    <h2>Changes to This Policy</h2>
-    <p>We may update this policy from time to time. Updates will be reflected on this page.</p>
-    <p>Last updated: July 20, 2025</p>
-</body>
-</html>
+<html><head><meta charset='UTF-8'><style>body { font-family: sans-serif; max-width: 700px; margin: auto; padding: 2em; }</style></head><body>
+    <nav>
+        <select onchange="changeLang(this.value)">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+            <option value="so">Somali</option>
+            <option value="ar">العربية</option>
+        </select>
+    </nav>
+    <div class='lang-block' data-lang='en' style='display:block' ><h1>Privacy Policy</h1><p>NewLeaf Tracker does not collect any personal data. Your data is stored locally and synced with your Google account if enabled.</p></div><div class='lang-block' data-lang='fr' style='display:none' ><h1>Politique de confidentialité</h1><p>NewLeaf Tracker ne collecte aucune donnée personnelle. Vos données sont stockées localement et synchronisées avec votre compte Google si activé.</p></div><div class='lang-block' data-lang='so' style='display:none' ><h1>Qaanuunka Arrimaha Khaaska ah</h1><p>NewLeaf Tracker ma ururiso xog shaqsiyeed. Xogtaada waxay ku kaydsan tahay kombiyuutarkaaga waxayna la jaanqaadi kartaa akoonkaaga Google haddii aad karti gelisay.</p></div><div class='lang-block' data-lang='ar' style='display:none' dir='rtl'><h1>سياسة الخصوصية</h1><p>لا يجمع NewLeaf Tracker أي بيانات شخصية. يتم تخزين بياناتك محليًا ويمكن مزامنتها مع حساب Google الخاص بك إذا تم تمكين ذلك.</p></div>
+    <script>
+    function changeLang(lang) {
+        document.querySelectorAll(".lang-block").forEach(el => el.style.display = "none");
+        document.querySelector(`.lang-block[data-lang="${lang}"]`).style.display = "block";
+    }
+    window.onload = () => changeLang("en");
+    </script>
+    </body></html>
